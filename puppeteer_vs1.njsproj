@@ -1,0 +1,374 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2e9f7c6d-23dc-4c05-81e7-b9a63034f579}</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <ProjectView>ShowAllFiles</ProjectView>
+    <StartupFile>puppeteer_server.js</StartupFile>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <ProjectTypeGuids>{3AF33F2E-1136-4D97-BBB7-1795711AC8B8};{349c5851-65df-11da-9384-00065b846f21};{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}</ProjectTypeGuids>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">14.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <LastActiveSolutionConfig>Debug|Any CPU</LastActiveSolutionConfig>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
+  <ItemGroup>
+    <Content Include="package-lock.json" />
+    <Content Include="package.json" />
+    <Content Include="urls.json" />
+    <Content Include="puppeteer_server.js" />
+    <Content Include="sitemap_class.js" />
+    <Content Include="url_grabber.js" />
+    <Content Include="olde_pictures\es_greaterny_sitemap.png" />
+    <Content Include="olde_pictures\greaterny.png" />
+    <Content Include="olde_pictures\greaterny_about_index_page.png" />
+    <Content Include="olde_pictures\greaterny_compare#cars_n_minivan.png" />
+    <Content Include="olde_pictures\greaterny_compare#crossovers_n_suvs.png" />
+    <Content Include="olde_pictures\greaterny_compare#hybrids_n_evs.png" />
+    <Content Include="olde_pictures\greaterny_compare#trucks.png" />
+    <Content Include="olde_pictures\greaterny_compare.png" />
+    <Content Include="olde_pictures\greaterny_compare_18_priusprime_fusion_page.png" />
+    <Content Include="olde_pictures\greaterny_compare_18_rav4hybrid_rogue_page.png" />
+    <Content Include="olde_pictures\greaterny_compare_19_4runner_pathfinder_page.png" />
+    <Content Include="olde_pictures\greaterny_compare_19_86_civic_page.png" />
+    <Content Include="olde_pictures\greaterny_compare_19_avalonhybrid_mkz_page.png" />
+    <Content Include="olde_pictures\greaterny_compare_19_avalon_maxima_page.png" />
+    <Content Include="olde_pictures\greaterny_compare_19_camryhybrid_malibu_page.png" />
+    <Content Include="olde_pictures\greaterny_compare_19_camry_accord_page.png" />
+    <Content Include="olde_pictures\greaterny_compare_19_corolla_civic_page.png" />
+    <Content Include="olde_pictures\greaterny_compare_19_Corolla_Hatchback_Elantra_page.png" />
+    <Content Include="olde_pictures\greaterny_compare_19_c_hr_hr_v_page.png" />
+    <Content Include="olde_pictures\greaterny_compare_19_highlander_acadia_page.png" />
+    <Content Include="olde_pictures\greaterny_compare_19_landcruiser_rangerover_page.png" />
+    <Content Include="olde_pictures\greaterny_compare_19_priusc_insight_page.png" />
+    <Content Include="olde_pictures\greaterny_compare_19_rav4_rogue_page.png" />
+    <Content Include="olde_pictures\greaterny_compare_19_sienna_odyssey_page.png" />
+    <Content Include="olde_pictures\greaterny_compare_19_tacoma_frontier_page.png" />
+    <Content Include="olde_pictures\greaterny_compare_19_tundra_f150_page.png" />
+    <Content Include="olde_pictures\greaterny_compare_index_page.png" />
+    <Content Include="olde_pictures\greaterny_contact_dealer.png" />
+    <Content Include="olde_pictures\greaterny_contact_dealer_index_page.png" />
+    <Content Include="olde_pictures\greaterny_dealers.png" />
+    <Content Include="olde_pictures\greaterny_dealers_index_page.png" />
+    <Content Include="olde_pictures\greaterny_dealer_directory_index_page.png" />
+    <Content Include="olde_pictures\greaterny_favorites.png" />
+    <Content Include="olde_pictures\greaterny_Home_page.png" />
+    <Content Include="olde_pictures\greaterny_inventory#cars_n_minivan.png" />
+    <Content Include="olde_pictures\greaterny_inventory#crossovers_n_suvs.png" />
+    <Content Include="olde_pictures\greaterny_inventory#hybrids_n_evs.png" />
+    <Content Include="olde_pictures\greaterny_inventory#trucks.png" />
+    <Content Include="olde_pictures\greaterny_inventory.png" />
+    <Content Include="olde_pictures\greaterny_inventory_index_page.png" />
+    <Content Include="olde_pictures\greaterny_landing_college_grad.png" />
+    <Content Include="olde_pictures\greaterny_landing_college_grad_index_page.png" />
+    <Content Include="olde_pictures\greaterny_landing_corolla_tss_cost_comparison.png" />
+    <Content Include="olde_pictures\greaterny_landing_highlander_tss_cost_comparison.png" />
+    <Content Include="olde_pictures\greaterny_landing_military_rebate.png" />
+    <Content Include="olde_pictures\greaterny_landing_parts_and_service_index_page.png" />
+    <Content Include="olde_pictures\greaterny_landing_rav4_tss_cost_comparison.png" />
+    <Content Include="olde_pictures\greaterny_legal_index_page.png" />
+    <Content Include="olde_pictures\greaterny_offers.png" />
+    <Content Include="olde_pictures\greaterny_offers_4runner_index_page.png" />
+    <Content Include="olde_pictures\greaterny_offers_86_index_page.png" />
+    <Content Include="olde_pictures\greaterny_offers_apr.png" />
+    <Content Include="olde_pictures\greaterny_offers_avalonhybrid_index_page.png" />
+    <Content Include="olde_pictures\greaterny_offers_avalon_index_page.png" />
+    <Content Include="olde_pictures\greaterny_offers_camryhybrid_index_page.png" />
+    <Content Include="olde_pictures\greaterny_offers_camry_index_page.png" />
+    <Content Include="olde_pictures\greaterny_offers_cash.png" />
+    <Content Include="olde_pictures\greaterny_offers_corollahatchback_index_page.png" />
+    <Content Include="olde_pictures\greaterny_offers_corollaim_index_page.png" />
+    <Content Include="olde_pictures\greaterny_offers_corolla_index_page.png" />
+    <Content Include="olde_pictures\greaterny_offers_c_hr_index_page.png" />
+    <Content Include="olde_pictures\greaterny_offers_highlanderhybrid_index_page.png" />
+    <Content Include="olde_pictures\greaterny_offers_highlander_index_page.png" />
+    <Content Include="olde_pictures\greaterny_offers_index_page.png" />
+    <Content Include="olde_pictures\greaterny_offers_landcruiser_index_page.png" />
+    <Content Include="olde_pictures\greaterny_offers_lease.png" />
+    <Content Include="olde_pictures\greaterny_offers_mirai_index_page.png" />
+    <Content Include="olde_pictures\greaterny_offers_misc.png" />
+    <Content Include="olde_pictures\greaterny_offers_msrp.png" />
+    <Content Include="olde_pictures\greaterny_offers_priusc_index_page.png" />
+    <Content Include="olde_pictures\greaterny_offers_priusprime_index_page.png" />
+    <Content Include="olde_pictures\greaterny_offers_prius_index_page.png" />
+    <Content Include="olde_pictures\greaterny_offers_rav4hybrid_index_page.png" />
+    <Content Include="olde_pictures\greaterny_offers_rav4_index_page.png" />
+    <Content Include="olde_pictures\greaterny_offers_sequoia_index_page.png" />
+    <Content Include="olde_pictures\greaterny_offers_sienna_index_page.png" />
+    <Content Include="olde_pictures\greaterny_offers_tacoma_index_page.png" />
+    <Content Include="olde_pictures\greaterny_offers_tundra_index_page.png" />
+    <Content Include="olde_pictures\greaterny_offers_yarisia_index_page.png" />
+    <Content Include="olde_pictures\greaterny_offers_yarisliftback_index_page.png" />
+    <Content Include="olde_pictures\greaterny_offers_yaris_index_page.png" />
+    <Content Include="olde_pictures\greaterny_payment_estimator.png" />
+    <Content Include="olde_pictures\greaterny_payment_estimator_index_page.png" />
+    <Content Include="olde_pictures\greaterny_request_a_quote.png" />
+    <Content Include="olde_pictures\greaterny_request_a_quote_index_page.png" />
+    <Content Include="olde_pictures\greaterny_schedule_a_test_drive_index_page.png" />
+    <Content Include="olde_pictures\greaterny_sitemap#.png" />
+    <Content Include="olde_pictures\greaterny_sitemap#main_wrapper_row.png" />
+    <Content Include="olde_pictures\greaterny_tools.png" />
+    <Content Include="olde_pictures\greaterny_tools_index_page.png" />
+    <Content Include="olde_pictures\greaterny_tools_toyota_safety_sense_index_page.png" />
+    <Content Include="olde_pictures\greaterny_trade_in_value.png" />
+    <Content Include="olde_pictures\greaterny_trade_in_value_index_page.png" />
+    <Content Include="olde_pictures\greaterny_vehicles#cars_n_minivan.png" />
+    <Content Include="olde_pictures\greaterny_vehicles#crossovers_n_suvs.png" />
+    <Content Include="olde_pictures\greaterny_vehicles#hybrids_n_evs.png" />
+    <Content Include="olde_pictures\greaterny_vehicles#trucks.png" />
+    <Content Include="olde_pictures\greaterny_vehicles.png" />
+    <Content Include="olde_pictures\greaterny_vehicles_4runner_index_page.png" />
+    <Content Include="olde_pictures\greaterny_vehicles_86_index_page.png" />
+    <Content Include="olde_pictures\greaterny_vehicles_avalonhybrid_index_page.png" />
+    <Content Include="olde_pictures\greaterny_vehicles_avalon_index_page.png" />
+    <Content Include="olde_pictures\greaterny_vehicles_camryhybrid_index_page.png" />
+    <Content Include="olde_pictures\greaterny_vehicles_camry_index_page.png" />
+    <Content Include="olde_pictures\greaterny_vehicles_corollahatchback_index_page.png" />
+    <Content Include="olde_pictures\greaterny_vehicles_corolla_index_page.png" />
+    <Content Include="olde_pictures\greaterny_vehicles_c_hr_index_page.png" />
+    <Content Include="olde_pictures\greaterny_vehicles_highlanderhybrid_index_page.png" />
+    <Content Include="olde_pictures\greaterny_vehicles_highlander_index_page.png" />
+    <Content Include="olde_pictures\greaterny_vehicles_index_page.png" />
+    <Content Include="olde_pictures\greaterny_vehicles_landcruiser_index_page.png" />
+    <Content Include="olde_pictures\greaterny_vehicles_priusc_index_page.png" />
+    <Content Include="olde_pictures\greaterny_vehicles_priusprime_index_page.png" />
+    <Content Include="olde_pictures\greaterny_vehicles_prius_index_page.png" />
+    <Content Include="olde_pictures\greaterny_vehicles_rav4hybrid_index_page.png" />
+    <Content Include="olde_pictures\greaterny_vehicles_rav4_index_page.png" />
+    <Content Include="olde_pictures\greaterny_vehicles_sequoia_index_page.png" />
+    <Content Include="olde_pictures\greaterny_vehicles_sienna_index_page.png" />
+    <Content Include="olde_pictures\greaterny_vehicles_tacoma_index_page.png" />
+    <Content Include="olde_pictures\greaterny_vehicles_tundra_index_page.png" />
+    <Content Include="olde_pictures\greaterny_vehicles_yarisliftback_index_page.png" />
+    <Content Include="olde_pictures\greaterny_vehicles_yaris_index_page.png" />
+    <Content Include="pictures\about.png" />
+    <Content Include="pictures\about_index_page.png" />
+    <Content Include="pictures\compare#cars_n_minivan.png" />
+    <Content Include="pictures\compare#crossovers_n_suvs.png" />
+    <Content Include="pictures\compare#hybrids_n_evs.png" />
+    <Content Include="pictures\compare#trucks.png" />
+    <Content Include="pictures\compare.png" />
+    <Content Include="pictures\compare_18_priusprime_fusion_page.png" />
+    <Content Include="pictures\compare_18_rav4hybrid_rogue_page.png" />
+    <Content Include="pictures\compare_19_4runner_pathfinder_page.png" />
+    <Content Include="pictures\compare_19_86_civic_page.png" />
+    <Content Include="pictures\compare_19_avalonhybrid_mkz_page.png" />
+    <Content Include="pictures\compare_19_avalon_maxima_page.png" />
+    <Content Include="pictures\compare_19_camryhybrid_malibu_page.png" />
+    <Content Include="pictures\compare_19_camry_accord_page.png" />
+    <Content Include="pictures\compare_19_corolla_civic_page.png" />
+    <Content Include="pictures\compare_19_Corolla_Hatchback_Elantra_page.png" />
+    <Content Include="pictures\compare_19_c_hr_hr_v_page.png" />
+    <Content Include="pictures\compare_19_highlander_acadia_page.png" />
+    <Content Include="pictures\compare_19_landcruiser_rangerover_page.png" />
+    <Content Include="pictures\compare_19_priusc_insight_page.png" />
+    <Content Include="pictures\compare_19_rav4_rogue_page.png" />
+    <Content Include="pictures\compare_19_sienna_odyssey_page.png" />
+    <Content Include="pictures\compare_19_tacoma_frontier_page.png" />
+    <Content Include="pictures\compare_19_tundra_f150_page.png" />
+    <Content Include="pictures\compare_index_page.png" />
+    <Content Include="pictures\contact_dealer.png" />
+    <Content Include="pictures\contact_dealer_index_page.png" />
+    <Content Include="pictures\dealers.png" />
+    <Content Include="pictures\dealers_index_page.png" />
+    <Content Include="pictures\dealer_directory.png" />
+    <Content Include="pictures\dealer_directory_index_page.png" />
+    <Content Include="pictures\favorites.png" />
+    <Content Include="pictures\Home_page.png" />
+    <Content Include="pictures\inventory#cars_n_minivan.png" />
+    <Content Include="pictures\inventory#crossovers_n_suvs.png" />
+    <Content Include="pictures\inventory#hybrids_n_evs.png" />
+    <Content Include="pictures\inventory#trucks.png" />
+    <Content Include="pictures\inventory.png" />
+    <Content Include="pictures\inventory_index_page.png" />
+    <Content Include="pictures\landing.png" />
+    <Content Include="pictures\landing_college_grad.png" />
+    <Content Include="pictures\landing_college_grad_index_page.png" />
+    <Content Include="pictures\landing_corolla_tss_cost_comparison.png" />
+    <Content Include="pictures\landing_highlander_tss_cost_comparison.png" />
+    <Content Include="pictures\landing_military_rebate.png" />
+    <Content Include="pictures\landing_parts_and_service.png" />
+    <Content Include="pictures\landing_parts_and_service_index_page.png" />
+    <Content Include="pictures\landing_rav4_tss_cost_comparison.png" />
+    <Content Include="pictures\legal.png" />
+    <Content Include="pictures\legal_index_page.png" />
+    <Content Include="pictures\offers.png" />
+    <Content Include="pictures\offers_4runner.png" />
+    <Content Include="pictures\offers_4runner_index_page.png" />
+    <Content Include="pictures\offers_86.png" />
+    <Content Include="pictures\offers_86_index_page.png" />
+    <Content Include="pictures\offers_apr.png" />
+    <Content Include="pictures\offers_avalon.png" />
+    <Content Include="pictures\offers_avalonhybrid.png" />
+    <Content Include="pictures\offers_avalonhybrid_index_page.png" />
+    <Content Include="pictures\offers_avalon_index_page.png" />
+    <Content Include="pictures\offers_camry.png" />
+    <Content Include="pictures\offers_camryhybrid.png" />
+    <Content Include="pictures\offers_camryhybrid_index_page.png" />
+    <Content Include="pictures\offers_camry_index_page.png" />
+    <Content Include="pictures\offers_cash.png" />
+    <Content Include="pictures\offers_corolla.png" />
+    <Content Include="pictures\offers_corollahatchback.png" />
+    <Content Include="pictures\offers_corollahatchback_index_page.png" />
+    <Content Include="pictures\offers_corollaim.png" />
+    <Content Include="pictures\offers_corollaim_index_page.png" />
+    <Content Include="pictures\offers_corolla_index_page.png" />
+    <Content Include="pictures\offers_c_hr.png" />
+    <Content Include="pictures\offers_c_hr_index_page.png" />
+    <Content Include="pictures\offers_highlander.png" />
+    <Content Include="pictures\offers_highlanderhybrid.png" />
+    <Content Include="pictures\offers_highlanderhybrid_index_page.png" />
+    <Content Include="pictures\offers_highlander_index_page.png" />
+    <Content Include="pictures\offers_index_page.png" />
+    <Content Include="pictures\offers_landcruiser.png" />
+    <Content Include="pictures\offers_landcruiser_index_page.png" />
+    <Content Include="pictures\offers_lease.png" />
+    <Content Include="pictures\offers_mirai.png" />
+    <Content Include="pictures\offers_mirai_index_page.png" />
+    <Content Include="pictures\offers_misc.png" />
+    <Content Include="pictures\offers_msrp.png" />
+    <Content Include="pictures\offers_prius.png" />
+    <Content Include="pictures\offers_priusc.png" />
+    <Content Include="pictures\offers_priusc_index_page.png" />
+    <Content Include="pictures\offers_priusprime.png" />
+    <Content Include="pictures\offers_priusprime_index_page.png" />
+    <Content Include="pictures\offers_prius_index_page.png" />
+    <Content Include="pictures\offers_rav4.png" />
+    <Content Include="pictures\offers_rav4hybrid.png" />
+    <Content Include="pictures\offers_rav4hybrid_index_page.png" />
+    <Content Include="pictures\offers_rav4_index_page.png" />
+    <Content Include="pictures\offers_sequoia.png" />
+    <Content Include="pictures\offers_sequoia_index_page.png" />
+    <Content Include="pictures\offers_sienna.png" />
+    <Content Include="pictures\offers_sienna_index_page.png" />
+    <Content Include="pictures\offers_tacoma.png" />
+    <Content Include="pictures\offers_tacoma_index_page.png" />
+    <Content Include="pictures\offers_tundra.png" />
+    <Content Include="pictures\offers_tundra_index_page.png" />
+    <Content Include="pictures\offers_yaris.png" />
+    <Content Include="pictures\offers_yarisia.png" />
+    <Content Include="pictures\offers_yarisia_index_page.png" />
+    <Content Include="pictures\offers_yarisliftback.png" />
+    <Content Include="pictures\offers_yarisliftback_index_page.png" />
+    <Content Include="pictures\offers_yaris_index_page.png" />
+    <Content Include="pictures\offer_detail.png" />
+    <Content Include="pictures\payment_estimator.png" />
+    <Content Include="pictures\payment_estimator_index_page.png" />
+    <Content Include="pictures\request_a_quote.png" />
+    <Content Include="pictures\request_a_quote_index_page.png" />
+    <Content Include="pictures\schedule_a_test_drive.png" />
+    <Content Include="pictures\schedule_a_test_drive_index_page.png" />
+    <Content Include="pictures\sitemap#.png" />
+    <Content Include="pictures\sitemap#main_wrapper_row.png" />
+    <Content Include="pictures\sitemap.png" />
+    <Content Include="pictures\sitemap_index_page.png" />
+    <Content Include="pictures\tools.png" />
+    <Content Include="pictures\tools_index_page.png" />
+    <Content Include="pictures\tools_toyota_safety_sense.png" />
+    <Content Include="pictures\tools_toyota_safety_sense_index_page.png" />
+    <Content Include="pictures\trade_in_value.png" />
+    <Content Include="pictures\trade_in_value_index_page.png" />
+    <Content Include="pictures\vehicles#cars_n_minivan.png" />
+    <Content Include="pictures\vehicles#crossovers_n_suvs.png" />
+    <Content Include="pictures\vehicles#hybrids_n_evs.png" />
+    <Content Include="pictures\vehicles#trucks.png" />
+    <Content Include="pictures\vehicles.png" />
+    <Content Include="pictures\vehicles_4runner.png" />
+    <Content Include="pictures\vehicles_4runner_index_page.png" />
+    <Content Include="pictures\vehicles_86.png" />
+    <Content Include="pictures\vehicles_86_index_page.png" />
+    <Content Include="pictures\vehicles_avalon.png" />
+    <Content Include="pictures\vehicles_avalonhybrid.png" />
+    <Content Include="pictures\vehicles_avalonhybrid_index_page.png" />
+    <Content Include="pictures\vehicles_avalon_index_page.png" />
+    <Content Include="pictures\vehicles_camry.png" />
+    <Content Include="pictures\vehicles_camryhybrid.png" />
+    <Content Include="pictures\vehicles_camryhybrid_index_page.png" />
+    <Content Include="pictures\vehicles_camry_index_page.png" />
+    <Content Include="pictures\vehicles_corolla.png" />
+    <Content Include="pictures\vehicles_corollahatchback.png" />
+    <Content Include="pictures\vehicles_corollahatchback_index_page.png" />
+    <Content Include="pictures\vehicles_corolla_index_page.png" />
+    <Content Include="pictures\vehicles_c_hr.png" />
+    <Content Include="pictures\vehicles_c_hr_index_page.png" />
+    <Content Include="pictures\vehicles_highlander.png" />
+    <Content Include="pictures\vehicles_highlanderhybrid.png" />
+    <Content Include="pictures\vehicles_highlanderhybrid_index_page.png" />
+    <Content Include="pictures\vehicles_highlander_index_page.png" />
+    <Content Include="pictures\vehicles_index_page.png" />
+    <Content Include="pictures\vehicles_landcruiser.png" />
+    <Content Include="pictures\vehicles_landcruiser_index_page.png" />
+    <Content Include="pictures\vehicles_prius.png" />
+    <Content Include="pictures\vehicles_priusc.png" />
+    <Content Include="pictures\vehicles_priusc_index_page.png" />
+    <Content Include="pictures\vehicles_priusprime.png" />
+    <Content Include="pictures\vehicles_priusprime_index_page.png" />
+    <Content Include="pictures\vehicles_prius_index_page.png" />
+    <Content Include="pictures\vehicles_rav4.png" />
+    <Content Include="pictures\vehicles_rav4hybrid.png" />
+    <Content Include="pictures\vehicles_rav4hybrid_index_page.png" />
+    <Content Include="pictures\vehicles_rav4_index_page.png" />
+    <Content Include="pictures\vehicles_sequoia.png" />
+    <Content Include="pictures\vehicles_sequoia_index_page.png" />
+    <Content Include="pictures\vehicles_sienna.png" />
+    <Content Include="pictures\vehicles_sienna_index_page.png" />
+    <Content Include="pictures\vehicles_tacoma.png" />
+    <Content Include="pictures\vehicles_tacoma_index_page.png" />
+    <Content Include="pictures\vehicles_tundra.png" />
+    <Content Include="pictures\vehicles_tundra_index_page.png" />
+    <Content Include="pictures\vehicles_yaris.png" />
+    <Content Include="pictures\vehicles_yarisliftback.png" />
+    <Content Include="pictures\vehicles_yarisliftback_index_page.png" />
+    <Content Include="pictures\vehicles_yaris_index_page.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="olde_pictures" />
+    <Folder Include="pictures" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <!--Do not delete the following Import Project.  While this appears to do nothing it is a marker for setting TypeScript properties before our import that depends on them.-->
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="False" />
+  <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsTools.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:48022/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>True</UseCustomServer>
+          <CustomServerUrl>http://localhost:1337</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" User="">
+        <WebProjectProperties>
+          <StartPageUrl>
+          </StartPageUrl>
+          <StartAction>CurrentPage</StartAction>
+          <AspNetDebugging>True</AspNetDebugging>
+          <SilverlightDebugging>False</SilverlightDebugging>
+          <NativeDebugging>False</NativeDebugging>
+          <SQLDebugging>False</SQLDebugging>
+          <ExternalProgram>
+          </ExternalProgram>
+          <StartExternalURL>
+          </StartExternalURL>
+          <StartCmdLineArguments>
+          </StartCmdLineArguments>
+          <StartWorkingDirectory>
+          </StartWorkingDirectory>
+          <EnableENC>False</EnableENC>
+          <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

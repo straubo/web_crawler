@@ -1,0 +1,135 @@
+
+* {
+  font-family: 'Raleway', sans-serif;
+  /* font-family: 'Noto Sans', sans-serif; */
+}
+/* .allButHeader {
+  font-size: 0;
+} */
+
+.leftHandSide {
+  width: 25%;
+  display: inline-block;
+  /*vertical-align: top;*/
+  /*position: absolute;*/
+  height:  480px;
+}
+
+.leftHandHeader {
+  text-align: center;
+  background-color: rgb(188, 188, 188);
+}
+
+.urlMenu {
+  /* max-height: 70vh; */
+  height: 100%;
+  background-color:rgb(199, 199, 199);
+  width: 100%;
+  /* list-style-type: none; */
+  overflow: scroll;
+}
+
+.urlItem {
+  width: 100%;
+  border-bottom: 1px solid black;
+  /* height: 30px; */
+/* 
+  display: flex;
+  flex-direction: column; */
+  /* align-items: center; */
+}
+.urlText {
+  width: 100%;
+  text-align: left;
+}
+
+/* _~_~_~__~_~_~_~_~_~_~_~_~__~_~_~_~_~__~_~_~_~_~_~_~_~_~ */
+
+.centerOuter {
+  display: inline-block;
+  vertical-align: top;
+  /*height: 70vh;*/
+  /*position: absolute;*/
+  height: 500px;
+  width: 70%;
+  /* left: 27%; */
+}
+
+.yesAndNoBlocks {
+  display: inline-block;
+  height: 100%;
+  width: 7%;
+}
+
+/*.yesOrNo {
+  height: 200px;
+  width: 100%;
+}*/
+.yesOrNo {
+  height: 50%;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.yes {
+  background-color: green;
+}
+.no {
+  background-color:  red;
+}
+
+.selected {
+  background-color: forestgreen;
+}
+
+.bothPhotoHolder {
+  display: inline-flex;
+  justify-content: space-around;
+  vertical-align: top;
+  width: 93%;
+}
+
+.crawledPicture {
+  /* max-height: 78vh; */
+  max-width: 100%;
+  /* position: absolute; */
+}
+
+.crawledPictureContainerScroll {
+  height: 78vh;
+  /* width: 40%; */
+  overflow-y: scroll;
+}
+
+.thePhoto {
+  display: inline-block;
+  vertical-align: top;
+  width: 48%;
+}
+
+.photoHeader {
+  text-align: center;
+}
+
+.mobileOrDesktop {
+  display: inline-block;
+  text-align: center;
+  width: 47.4%;
+  background-color: #e5e5e5;
+}
+
+.crawledDate {
+  width: 98%;
+  text-align: center;
+}
+
+.crawledDateOff {
+  display: none;
+}
+
+.selectedFormat {
+  background-color: grey;
+}
