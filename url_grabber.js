@@ -1,16 +1,15 @@
+// 'pacificnorthwest', 'central', 'midwest',
+// 'greaterny', 'upstateny', 'connecticut', 
+// 'tristateeast', 'tristate', 'denver'
+
 const puppeteer = require('puppeteer');
 const util = require('util');
 const fs = require('fs');
 const currentUrls = require('./urls.json');
 const mongoConnect = require('./mongoconnect');
 // const data2 = require('./urls.json');
-// console.log(data2);
-
 
 // don't forget about espanol!
-// https://www.buyatoyota.com/es/greaterny/sitemap/
-
-
 // , currentUrlObj
 async function grabUrlsFromSiteMap(rootURL, regionURL) {
     // let data2 = currentUrls;
@@ -19,16 +18,11 @@ async function grabUrlsFromSiteMap(rootURL, regionURL) {
     });
     let page = await browser.newPage();
     let url = rootURL + '/' + regionURL + "/sitemap";
-
     await page.goto(url, {waitUntil: "domcontentloaded"}); 
-    //let objectOfUrls = await page.evaluate((currentUrlObj) => {
+    //let objectOfUrls = await page.evaluate((currentUrlObj) => { // if we were taking in an existing object and checking
     let objectOfUrls = await page.evaluate(() => {
-        let currentUrlObj = {}; // do I need this line in actuality?
-        let elements = document.getElementsByTagName('a'); // grabs all links on this page
-        // creates nested object from URL - checks to see if nested object is there, and if not, creates it
-        // investigate if there is a problem with this: are you sure you're comparing the same level of depth with the object? Seems to work....?
-        // probably just replacing entire obj instead of actually comparing... look into this later.
-        // doesn't take into account the removal of endpoints! (perhaps don't need to check if obj is the same)
+        let currentUrlObj = {}; // instantiates base obj for iteration
+        let elements = document.getElementsByTagName('a'); 
         let checkArrayAgainstObject = (incomingObject, incomingArray) => {
             let currentKeys = [], currentObject = incomingObject;
             for(let i=0; i<incomingArray.length; i++) {
@@ -41,31 +35,38 @@ async function grabUrlsFromSiteMap(rootURL, regionURL) {
             return incomingObject;
         }
         for(let i = 0; i < elements.length; i++) {
+            // && elements[i].href != "www.buyatoyota.com" // this is a mistake probably - you have to filter out a rogue "buyatoyota.com"
             if(elements[i].href) {
                 let slashDelineated = elements[i].href.split('/').filter(word => word != ''); // parses href string, creates array of slash-delineated strings
                 let regex = /\./g;
                 slashDelineated[slashDelineated.length - 1] = slashDelineated[slashDelineated.length - 1].replace(regex, "_-_-z-_-_");
                 // let slashDelineated = elements[i].href.replace(".", "_-_-z-_-_").split('/').filter(word => word != '');
-                // right idea, but can't do this here ^^ has to be on only the 
-                //for (let j = 0; j < slashDelineated.length; j++) {
-                    
-                //}
-                console.log(currentUrlObj);
+
+                // if(slashDelineated[0] == 'https:' || slashDelineated[0] == "www.buyatoyota.com") {continue} else { // absolutely not
                 checkArrayAgainstObject(currentUrlObj, slashDelineated); // run slash-delineated arr. against the incoming object from json
+                // }
             }
         }
-        return { currentUrlObj }; // maybe I should rename these so this file is more readable?
+        return { currentUrlObj };
+        // return  currentUrlObj['https:']['www.buyatoyota.com'][regionURL] ;
     });
     //}, currentUrlObj); // actual incoming object
 
     await browser.close();
 
-    let data = JSON.stringify(objectOfUrls.currentUrlObj['https:']['www.buyatoyota.com'][regionURL], null, 2);
-    // fs.writeFile('urls.json', data, {flag: 'w+'}, (err) => { //need this to replace the existing content
+    // let data = JSON.stringify(objectOfUrls.currentUrlObj['https:']['www.buyatoyota.com'][regionURL], null, 2);
+    // i believe that stringifying the object is making the object unrecievable to Mongo
+
+    data = objectOfUrls.currentUrlObj['https:']['www.buyatoyota.com'][regionURL];
+    // data = objectOfUrls;
+    
     console.log(data);
-  return data;
-  // same thing, but for Denver
-  //fs.writeFile('urls_denver.json', data, {flag: 'w+'}, (err) => { //need this to replace the existing content
+    mongoConnect.upsertObj(data, regionURL);
+    return data;
+
+
+    // same thing, but for Denver
+    //fs.writeFile('urls_denver.json', data, {flag: 'w+'}, (err) => { //need this to replace the existing content
     //    if (err) throw err;
     //    //console.log('data was written to the file');
     //});
@@ -76,14 +77,24 @@ async function grabUrlsFromSiteMap(rootURL, regionURL) {
     // launchPuppeteer(listOfUrls);
     // ^^ sends these links to puppeteer ^^
 }
+
+
 module.exports = {
     grabUrlsFromSiteMap: grabUrlsFromSiteMap
 }
 
 // need one of these to go to do anything
- //grabUrlsFromSiteMap("https://www.buyatoyota.com", "greaterny", currentUrls);
-//  {}
-grabUrlsFromSiteMap('https://buyatoyota.com', 'denver');
+ grabUrlsFromSiteMap("https://www.buyatoyota.com", "denver");
+ // 'pacificnorthwest', 'central', 'midwest',
+    //  ^problem         ^ good     ^ good
+// 'greaterny', 'upstateny', 'connecticut', 
+//  ^good          ^good          ^good
+// 'tristateeast', 'tristate', 'denver'
+//  ^good            ^good       ^good
+
+
+// grabUrlsFromSiteMap('https://buyatoyota.com', 'greaterny');
+
 
 //let stateOfTheUrl = grabUrlsFromSiteMap('https://www.buyatoyota.com', 'greaterny', currentUrls);
 

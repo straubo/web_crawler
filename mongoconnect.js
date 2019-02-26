@@ -4,19 +4,20 @@ let dbName = "greaternyUrlObject"; // placeholder
 const assert = require('assert');
 // const data2 = require('./urls.json'); // just for first I think?
 
-
-let connectToDbAndRead = (urlObj, region, callback) => { // connect, read
-    //console.log('this is firing');
+// urlObj,
+let connectToDbAndRead = (region, callback) => { // connect, read
     let client = new MongoClient(url);
     client.connect(function (err) {
         assert.equal(null, err);
         console.log("Connected successfully to server");
-        let db = client.db(dbName);
+        let db = client.db(region + "UrlObject");
         db.collection(region).find({}).toArray((err, docs) => {
             let mongoUrlObj = JSON.parse(JSON.stringify(docs[0])); // makes deep copy
-            delete mongoUrlObj._id;
-            callback(mongoUrlObj, client);
+            console.log(mongoUrlObj);
+            delete mongoUrlObj._id; // important! removes id field, allows fcn to iterate
+            callback(mongoUrlObj, client, region);
         });
+        // client.close();
         // console.log('closed the db relationship');
     });
 };
@@ -26,10 +27,19 @@ let connectAndWrite = (urlObj, region) => {
     client.connect(function (err) {
         assert.equal(null, err);
         console.log("Connected successfully to server");
-        let db = client.db((region + "UrlObject"));
+        // let db = client.db(dbName); // ... was working!
+        // let db = client.db((region + "UrlObject"));
+        let db = client.db(region); 
+
         //let myDocuments = db.collection('somethingelse').find({});
         // db.collection('somethingelse').insertOne(urlObj); // working!
-        db.collection(region).insertOne(urlObj); // working!
+
+        // db.collection(region).insertOne(urlObj); // working!
+        db.collection(region + "ObjectUrl").insertOne(urlObj); // works
+
+        // want to replace this ^^^ working item with update functionality!
+        // db.collection(region).update(
+        // )
 
         //console.log(myDocuments);
         // these, I suppose must be inside the connect function?
@@ -38,14 +48,23 @@ let connectAndWrite = (urlObj, region) => {
     });
 }
 
+let hi = () => {
+    console.log("hi");
+}
+
+// connectToDbAndRead('pacificnorthwest', hi);
+
 module.exports = {
     upsertObj: connectAndWrite,
     retrieveUrlObj: connectToDbAndRead,
     hello: "hello world",
 }
+// connectAndWrite();
 
 
-connectAndWrite(data2, "greaterny");
+
+
+// connectAndWrite(data2, "greaterny");
 
 
 // connectToDbAndRead(testSubject, connectCallback);
