@@ -5,8 +5,14 @@
 const puppeteer = require('puppeteer');
 const util = require('util');
 const fs = require('fs');
-const currentUrls = require('./urls.json');
+// const currentUrls = require('./urls.json');
 const mongoConnect = require('./mongoconnect');
+
+const urlArray = [
+    'pacificnorthwest', 'central', 'midwest',
+    'greaterny', 'upstateny', 'connecticut', 
+    'tristateeast', 'tristate', 'denver'
+]
 // const data2 = require('./urls.json');
 
 // don't forget about espanol!
@@ -14,7 +20,7 @@ const mongoConnect = require('./mongoconnect');
 async function grabUrlsFromSiteMap(rootURL, regionURL) {
     // let data2 = currentUrls;
     let browser = await puppeteer.launch({
-        //headless: false // included in the event we want to watch the action!
+        headless: false // included in the event we want to watch the action!
     });
     let page = await browser.newPage();
     let url = rootURL + '/' + regionURL + "/sitemap";
@@ -27,7 +33,8 @@ async function grabUrlsFromSiteMap(rootURL, regionURL) {
             let currentKeys = [], currentObject = incomingObject;
             for(let i=0; i<incomingArray.length; i++) {
                 currentKeys = (Object.keys(currentObject));
-                if(!currentKeys.includes(incomingArray[i])) {
+                // if(!currentKeys.includes(incomingArray[i]))
+                if(!currentKeys.includes(incomingArray[i]) || currentKeys.length == 1 && currentKeys[0] == "index_-_-z-_-_page") { // ??????
                     currentObject[incomingArray[i]] = {};
                 }
                 currentObject = currentObject[incomingArray[i]];
@@ -35,7 +42,6 @@ async function grabUrlsFromSiteMap(rootURL, regionURL) {
             return incomingObject;
         }
         for(let i = 0; i < elements.length; i++) {
-            // && elements[i].href != "www.buyatoyota.com" // this is a mistake probably - you have to filter out a rogue "buyatoyota.com"
             if(elements[i].href) {
                 let slashDelineated = elements[i].href.split('/').filter(word => word != ''); // parses href string, creates array of slash-delineated strings
                 let regex = /\./g;
@@ -54,7 +60,8 @@ async function grabUrlsFromSiteMap(rootURL, regionURL) {
 
     // let data = JSON.stringify(objectOfUrls.currentUrlObj['https:']['www.buyatoyota.com'][regionURL], null, 2);
 
-    // format ad send the shit to mongo
+
+    // format and send the shit to mongo
     // data = objectOfUrls.currentUrlObj['https:']['www.buyatoyota.com'][regionURL];
     // mongoConnect.upsertObj(data, regionURL);
 
@@ -62,10 +69,10 @@ async function grabUrlsFromSiteMap(rootURL, regionURL) {
     data = JSON.stringify(objectOfUrls.currentUrlObj['https:']['www.buyatoyota.com'][regionURL], null, 2);
     fs.writeFile('urls_' + regionURL + '.json', data, {flag: 'w+'}, (err) => { //need this to replace the existing content
        if (err) throw err;
-       //console.log('data was written to the file');
+       console.log('data was written to the file');
     });
 
-    return data;
+    // return data;
     // -------------------------------
 
     // return ultimateUrlArray;
@@ -77,8 +84,26 @@ module.exports = {
 }
 
 // need one of these to go to do anything
+// let crawlAllRegions = (a) => {
+//     // for(let i=0; i<urlArray; i++) {
+//     a.forEach((element) => {
+//         console.log('hi');
+//         grabUrlsFromSiteMap("https://www.buyatoyota.com", element);
+//     })
+//     // }
+// }
 
- grabUrlsFromSiteMap("https://www.buyatoyota.com", "midwest"); 
+// crawlAllRegions(urlArray);
+
+// grabUrlsFromSiteMap("https://www.buyatoyota.com", "pacificnorthwest");
+// grabUrlsFromSiteMap("https://www.buyatoyota.com", "central");
+// grabUrlsFromSiteMap("https://www.buyatoyota.com", "midwest");
+grabUrlsFromSiteMap("https://www.buyatoyota.com", "greaterny");
+// grabUrlsFromSiteMap("https://www.buyatoyota.com", "upstateny");
+// grabUrlsFromSiteMap("https://www.buyatoyota.com", "connecticut");
+// grabUrlsFromSiteMap("https://www.buyatoyota.com", "tristateeast");
+// grabUrlsFromSiteMap("https://www.buyatoyota.com", "tristate");
+// grabUrlsFromSiteMap("https://www.buyatoyota.com", "denver");
 
  // 'pacificnorthwest', 'central', 'midwest',
     //  ^problem - send gny urls through

@@ -1,5 +1,42 @@
 {
   "sitemap#main-wrapper-row": {},
+  "trade-in-value": {
+    "index_-_-z-_-_page": {}
+  },
+  "contact-dealer": {
+    "index_-_-z-_-_page": {}
+  },
+  "favorites": {},
+  "landing": {
+    "rav4-tss-cost-comparison": {},
+    "highlander-tss-cost-comparison": {},
+    "corolla-tss-cost-comparison": {},
+    "college-grad": {
+      "index_-_-z-_-_page": {}
+    },
+    "military-rebate": {},
+    "parts-and-service": {
+      "index_-_-z-_-_page": {}
+    }
+  },
+  "request-a-quote": {
+    "index_-_-z-_-_page": {}
+  },
+  "inventory": {
+    "index_-_-z-_-_page": {}
+  },
+  "payment-estimator": {
+    "index_-_-z-_-_page": {}
+  },
+  "tools": {
+    "index_-_-z-_-_page": {},
+    "toyota-safety-sense": {
+      "index_-_-z-_-_page": {}
+    }
+  },
+  "dealers": {
+    "index_-_-z-_-_page": {}
+  },
   "vehicles": {
     "86": {
       "index_-_-z-_-_page": {}
@@ -160,86 +197,33 @@
     "misc": {}
   },
   "compare": {
-    "?series=86": {},
-    "?series=avalon": {},
-    "?series=camry": {},
-    "?series=corolla": {},
-    "?series=corollahatchback": {},
-    "?series=sienna": {},
+    "19-86-civic_-_-z-_-_page": {},
+    "19-avalon-maxima_-_-z-_-_page": {},
+    "19-camry-accord_-_-z-_-_page": {},
+    "19-corolla-civic_-_-z-_-_page": {},
+    "19-Corolla-Hatchback-Elantra_-_-z-_-_page": {},
+    "19-sienna-odyssey_-_-z-_-_page": {},
     "?series=yaris": {},
     "?series=yarisliftback": {},
-    "?series=tacoma": {},
-    "?series=tundra": {},
-    "?series=4runner": {},
-    "?series=c-hr": {},
-    "?series=highlander": {},
-    "?series=landcruiser": {},
-    "?series=rav4": {},
+    "19-tacoma-frontier_-_-z-_-_page": {},
+    "19-tundra-f150_-_-z-_-_page": {},
+    "19-4runner-pathfinder_-_-z-_-_page": {},
+    "19-c-hr-hr-v_-_-z-_-_page": {},
+    "19-highlander-acadia_-_-z-_-_page": {},
+    "19-landcruiser-rangerover_-_-z-_-_page": {},
+    "19-rav4-rogue_-_-z-_-_page": {},
     "?series=sequoia": {},
-    "?series=avalonhybrid": {},
-    "?series=camryhybrid": {},
+    "19-avalonhybrid-mkz_-_-z-_-_page": {},
+    "19-camryhybrid-malibu_-_-z-_-_page": {},
     "?series=highlanderhybrid": {},
     "?series=prius": {},
     "?series=priusprime": {},
-    "?series=priusc": {},
-    "?series=rav4hybrid": {},
-    "18-camry-accord_-_-z-_-_page": {},
-    "18-corolla-civic_-_-z-_-_page": {},
-    "18-rav4-crv_-_-z-_-_page": {},
-    "18-highlander-pilot_-_-z-_-_page": {},
-    "18-4runner-cherokee_-_-z-_-_page": {},
-    "index_-_-z-_-_page": {}
-  },
-  "request-a-quote": {
-    "index_-_-z-_-_page": {}
-  },
-  "favorites": {},
-  "https:": {
-    "www.buyatoyota.com": {
-      "home": {
-        "compare": {
-          "18-tacoma-colorado_-_-z-_-_page": {}
-        }
-      }
-    }
-  },
-  "landing": {
-    "ttt": {
-      "safety": {},
-      "value": {}
-    },
-    "toyota-care": {},
-    "parts-and-service": {
-      "index_-_-z-_-_page": {}
-    }
-  },
-  "offer-detail": {
-    "?offerid=miscellaneous_1525296726779": {},
-    "?offerid=miscellaneous_1525297185554": {}
-  },
-  "trade-in-value": {
-    "index_-_-z-_-_page": {}
-  },
-  "payment-estimator": {
-    "index_-_-z-_-_page": {}
-  },
-  "tools": {
-    "index_-_-z-_-_page": {},
-    "toyota-safety-sense": {
-      "index_-_-z-_-_page": {}
-    }
-  },
-  "inventory": {
-    "index_-_-z-_-_page": {}
-  },
-  "dealers": {
+    "19-priusc-insight_-_-z-_-_page": {},
+    "18-rav4hybrid-rogue_-_-z-_-_page": {},
     "index_-_-z-_-_page": {}
   },
   "Home_-_-z-_-_page": {},
   "schedule-a-test-drive": {
-    "index_-_-z-_-_page": {}
-  },
-  "contact-dealer": {
     "index_-_-z-_-_page": {}
   },
   "legal": {
@@ -247,6 +231,10 @@
   },
   "about": {
     "index_-_-z-_-_page": {}
+  },
+  "offer-detail": {
+    "?offerid=miscellaneous_1518814334054": {},
+    "?offerid=miscellaneous_1518814335335": {}
   },
   "inventory#cars-n-minivan": {},
   "inventory#trucks": {},
