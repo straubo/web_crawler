@@ -1,18 +1,30 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
   <h1>Welcome to {{ title }}! </h1>
+  <div>{{ selectedRegion }}</div>
 </div>
 
 <div class="allButHeader">
   <div class="leftHandSide">
     <!-- <div class="leftHandHeader">menu</div>  -->
-    <div class="mobileOrDesktop" [ngClass]='{selectedFormat: !mobile}' (click)="selectDesktopOrMobile(false, selectedUrl)">Desktop</div>
-    <div class="mobileOrDesktop" [ngClass]='{selectedFormat: mobile}' (click)="selectDesktopOrMobile(true, selectedUrl)">Mobile</div>
+
+    <!-- <div class="mobileOrDesktop" [ngClass]='{selectedFormat: !mobile}' (click)="selectDesktopOrMobile(false, selectedUrl)">Desktop</div>
+    <div class="mobileOrDesktop" [ngClass]='{selectedFormat: mobile}' (click)="selectDesktopOrMobile(true, selectedUrl)">Mobile</div> -->
+
+    <!-- [ngValue]="region" -->
+    <!-- (click)="selectRegion(region)" -->
+    <form #regionForm="ngForm">
+      <select
+      [ngModelOptions]="{standalone: true}"
+      [(ngModel)]="selectedRegion">
+        <option *ngFor="let region of regionArray"
+          [value]="region">{{region}}
+        </option>
+      </select>
+    </form>
+
     <div class="urlMenu">
-        <!-- , 'selected': url.substring(0, ) -->
       <div *ngFor="let url of sharedUrlArray" [ngClass]="{'selected': url == selectedUrl || selectedUrl.substring(0, 7) == 'mobile_' && selectedUrl.substring(7) == url}" class="urlItem" (click)="onSelect(url)">
-        <!-- || url == ('mobile_' + selectedUrl)} -->
-          <!--              ^^ menu styling for the "or" -->
         <div class="urlText">{{url}}</div>
       </div>
       <!-- going to be a second ng-for list? do we need this? -->
@@ -23,29 +35,34 @@
     </div>
   </div>
   <div class="centerOuter">
-    <div class="yesAndNoBlocks">
+    <!-- <div class="yesAndNoBlocks">
       <div class="yesOrNo yes"><span>yes</span></div>
       <div class="yesOrNo no"><span>no</span></div>
-    </div>
+    </div> -->
     <div class="bothPhotoHolder">
       <div class="thePhoto">
-        <div class="photoHeader">before</div>
+        <div class="photoHeader">desktop</div>
         <div class="crawledPictureContainerScroll">
-          <img class="gnyPicture crawledPicture" src="./assets/greaterny/{{selectedUrl}}.png" />
+          <img class="gnyPicture crawledPicture" src="./assets/{{selectedRegion}}/mobile_{{selectedUrl}}.png" />
         </div>
-        <div class="crawledDate" [ngClass]='{crawledDateOff: mobile}'>crawled Feb 15 2019</div>
-        <div class="crawledDate" [ngClass]='{crawledDateOff: !mobile}'>crawled Feb 19 2019</div>
+
+        <!-- <div class="crawledDate" [ngClass]='{crawledDateOff: mobile}'>crawled Feb 15 2019</div>
+        <div class="crawledDate" [ngClass]='{crawledDateOff: !mobile}'>crawled Feb 19 2019</div> --> 
+        <!-- crawl dates --> 
+
         <!-- [ngIf]="!mobile"
         [ngIf]="mobile" -->
       </div>
       <div  class="thePhoto">
-        <div class="photoHeader">after</div>
+        <div class="photoHeader">mobile</div>
         <div class="crawledPictureContainerScroll">
-          <img class="denverPicture crawledPicture" src="./assets/denver/{{selectedUrl}}.png" />
+          <img class="denverPicture crawledPicture" src="./assets/{{selectedRegion}}/{{selectedUrl}}.png" />
         </div>
-        <!-- <div class="crawledDate">crawled Feb 19 2019</div> -->
-        <div class="crawledDate" [ngClass]='{crawledDateOff: mobile}'>crawled Feb 15 2019</div>
-        <div class="crawledDate" [ngClass]='{crawledDateOff: !mobile}'>crawled Feb 19 2019</div>
+
+        <!-- <div class="crawledDate" [ngClass]='{crawledDateOff: mobile}'>crawled Feb 15 2019</div>
+        <div class="crawledDate" [ngClass]='{crawledDateOff: !mobile}'>crawled Feb 19 2019</div> -->
+        <!-- crawl dates --> 
+
       </div>
     </div>
   </div>

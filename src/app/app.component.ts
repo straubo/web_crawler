@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+// import { FormControl } from '@angular/forms';
 // var data = require('src/crawldates.json'); 
 
 @Component({
@@ -10,6 +11,7 @@ export class AppComponent {
   title = "Casey's page comparison";
 
   selectedUrl = "vehicles";
+  selectedRegion = "greaterny";
   mobile = false;
   //function 
   onSelect(a: string) {
@@ -22,9 +24,12 @@ export class AppComponent {
       }
       this.selectedUrl = a;
       this.title = a;
-      //return a;
     }
   };
+
+  selectRegion = (a: string) => {
+    this.selectedRegion = a; 
+  }
 
   selectDesktopOrMobile(k: boolean, currentUrl) {
     this.mobile = k;
@@ -33,6 +38,11 @@ export class AppComponent {
 
   // these are here for angular. The url menu loops through this - they are formatted the same as 
   // the picture extensions
+  regionArray = [
+    'pacificnorthwest', 'central', 'midwest',
+    'greaterny', 'upstateny', 'connecticut', 
+    'tristateeast', 'tristate', 'denver'
+  ];
 
   sharedUrlArray = [
     'trade_in_value',
