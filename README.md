@@ -17,6 +17,7 @@ Things this project used to do:
 These features are still in the source code, but they're commented out, so they don't work right now. Kapeesh?
 
 For the layperson, here are the technologies you need to run it, and the steps you need to take to do so:
+
 1: You need to have Node and npm installed on your computer (I used node v. 10.14.1)
 
 2: Ideally, you have a very simple code editor on your computer - you don't need admin permissions to install Visual Studio Code. This will make some of the steps involved easier.
