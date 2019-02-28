@@ -40,13 +40,7 @@ node puppeteer_server.js "greaterny" false
 
 In the above line, substitute "greaterny" for whichever region you want to check. The false part should answer the question: do you want to check mobile? If the answer is yes, write true instead.
 
-If you have to check all of these, in its current iteration, it's a bit tedious, I'll admit, but it allows for you to save time if you only want to check one TDA.
-
-In that text editor we talked about, open up the project. In the parent folder, there should be a file called puppeteer_server.js. open that.
-
-Go down to line 118 (could change). You will see a line that says: getUrlObj('central', false)
-
-This is the function you need to change. The region name is which region to go to. The 'false' part is whether you're taking mobile screenshots or not (if this word is false, it will take desktop photos instead). Depending on what you need to see, put in the url extension for the region you need to look at, and whether you want to do mobile or desktop.
+If you have to check all of these with the project the way it is, it's a bit tedious, I'll admit, but it allows for you to save time if you only want to check one TDA.
 
 To be clear, the region should be in quotes (like "greaterny") and the true or false part should not. Otherwise, it won't work.
 
