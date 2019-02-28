@@ -2,9 +2,13 @@ Hello gang! If you have found yourself on this page, you are most likely a DPM f
 
 Here's what the program does/can do:
 1: Goes to sitemap of a given TDA and gets a list of URLs, which the program will use later to take pictures
+
 2: Travels to each URL in that list
+
 3: Takes a picture of that site in the selected format (desktop or mobile), and saves it to a folder named after the TDA.
+
 4: There is a UI that displays these photos, so you can scan through them much quicker than if you had to navigate to each URL yourself.
+
 
 Things this project used to do:
 - save each url list to a MongoDB database
@@ -17,9 +21,7 @@ For the layperson, here are the technologies you need to run it, and the steps y
 
 2: Ideally, you have a very simple code editor on your computer - you don't need admin permissions to install Visual Studio Code. This will make some of the steps involved easier.
 
-3: I wrote this with Angular version 7.1.4 and the Angular CLI (command line interface) version 7.1.4. If you install angular blindly, it'll give you the most recent stable version, which probably won't be the same version number. It may still work, but it is probably better to get the same version as I used.
-
-4: git. This is a version control technology, and it's how you're going to get this application onto your computer.
+3: git. This is a version control technology, and it's how you're going to get this application onto your computer.
 
 Okay, first step:
 1: git pull this repo (basically, download the project). Once you've done this, put it in a folder that you can easily find again.
