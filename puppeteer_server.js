@@ -2,7 +2,8 @@ const puppeteer = require('puppeteer');
 const util = require('util');
 const fs = require('fs');
 const mongoConnect = require('./mongoconnect');
-
+let regionToCheck = process.argv[2];
+let checkingMobile = process.argv[3];
 
 // ---------------------------------------- url looper ----------------------------------------------------
 
@@ -65,6 +66,8 @@ async function launchPuppeteer(urls, mainUrl, region, mobileYes) {
         // {headless: false}  // included in the event we want to watch the action!
         );
     let page = await browser.newPage();
+
+
 // ---------------------------------------------------    mobile    ---------------------------------------------------
 
     if (mobileYes) {
@@ -78,9 +81,12 @@ async function launchPuppeteer(urls, mainUrl, region, mobileYes) {
     }
 
 // ---------------------------------------------------    mobile    ---------------------------------------------------
+
+
     // page.on('dialog', async dialog => { // dunno if we'll ever need this
     //     await dialog.dismiss();
     // })
+
 
     for(let i=0; i < urls.length; i++) {
         try {
@@ -115,7 +121,8 @@ async function launchPuppeteer(urls, mainUrl, region, mobileYes) {
     }
     await browser.close();
 }
-getUrlObj('central', false);
+// getUrlObj('central', false);
+getUrlObj(regionToCheck, checkingMobile);
 
 // 'pacificnorthwest', 'central', 'midwest',
 // 'greaterny', 'upstateny', 'connecticut', 
