@@ -43,4 +43,15 @@ testem.log
 Thumbs.db
 
 # assets - pictures
-/src/assets
+/src/assets/central
+/src/assets/connecticut
+/src/assets/denver
+/src/assets/greaterny
+/src/assets/midwest
+/src/assets/pacificnorthwest
+/src/assets/tristate
+/src/assets/tristateeast
+/src/assets/upstateny
+
+
+
