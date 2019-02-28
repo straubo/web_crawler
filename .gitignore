@@ -53,5 +53,9 @@ Thumbs.db
 /src/assets/tristateeast
 /src/assets/upstateny
 
+# ignore the url json files
+urls*
+combined_array.json
+
 
 
