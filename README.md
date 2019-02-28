@@ -1,6 +1,7 @@
 Hello gang! If you have found yourself on this page, you are most likely a DPM for Saatchi that is doing content changes; for QA purposes, you want to check how they look en masse.
 
 Here's what the program does/can do:
+
 1: Goes to sitemap of a given TDA and gets a list of URLs, which the program will use later to take pictures
 
 2: Travels to each URL in that list
