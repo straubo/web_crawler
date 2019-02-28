@@ -14,12 +14,16 @@ These features are still in the source code, but they're commented out, so they 
 
 For the layperson, here are the technologies you need to run it, and the steps you need to take to do so:
 1: You need to have Node and npm installed on your computer (I used node v. 10.14.1)
+
 2: Ideally, you have a very simple code editor on your computer - you don't need admin permissions to install Visual Studio Code. This will make some of the steps involved easier.
+
 3: I wrote this with Angular version 7.1.4 and the Angular CLI (command line interface) version 7.1.4. If you install angular blindly, it'll give you the most recent stable version, which probably won't be the same version number. It may still work, but it is probably better to get the same version as I used.
+
 4: git. This is a version control technology, and it's how you're going to get this application onto your computer.
 
 Okay, first step:
 1: git pull this repo (basically, download the project). Once you've done this, put it in a folder that you can easily find again.
+
 2: in Powershell or another command line tool, navigate to this folder. once you're in the folder with "package.json" in it, type "npm install" and hit enter. This is the main "parent" project folder. This command installs a bunch of other stuff that you're not going to worry about right now.
 
 Great! You've got the basic program on your computer! Once you take a celebratory break, let's run it!
@@ -65,7 +69,7 @@ That's all this program can do right now. I hope this helps you!
 
 
 
-
+-------------------------------------here's some technical pre-generated other stuff:-------------------------------------
 # WebCrawler
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.1.
