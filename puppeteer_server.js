@@ -70,7 +70,7 @@ async function launchPuppeteer(urls, mainUrl, region, mobileYes) {
 
 // ---------------------------------------------------    mobile    ---------------------------------------------------
 
-    if (mobileYes) {
+    if (mobileYes == "true") {
         await page.setViewport({
             width: 375,
             height: 812,
@@ -100,7 +100,7 @@ async function launchPuppeteer(urls, mainUrl, region, mobileYes) {
             if(currentUrl[0] == '_') {currentUrl = currentUrl.substring(1)}; // cleaning up filepath string
             if(currentUrl[-1] == "_") {currentUrl = currentUrl.substring(0, currentUrl.length - 1)}; // cleaning up filepath string
 
-            if (mobileYes) {
+            if (mobileYes == "true") {
                 currentUrl = "mobile_" + currentUrl.replace(/\//gi, '_').replace(/\-/gi, '_').replace(/\./gi, '_') + '.png'; 
             } else {
             // currentUrl = "mobile_" + currentUrl.replace(/\//gi, '_').replace(/\-/gi, '_').replace(/\./gi, '_') + '.png'; 
